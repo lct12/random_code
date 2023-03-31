@@ -5,11 +5,6 @@ import yaml
 import os
 from os import sep
 
-# Set up connection using sql achelmy
-from sqlalchemy.engine import create_engine
-engine = create_engine(xxx)
-conn = engine.connect() 
-
 
 def uploadDF(df,tableName,tableSchema,if_exists='append',con=conn):
     # df = df to be uploaded
