@@ -31,7 +31,7 @@ I wrote all the code snippets here to automate things that I frequently do while
 This function allows you to output a pandas dataframe object to google sheets.
 
 ### Enable the Google Sheets API & set up authorisation.
-First, Enable API Access for a Project. To do this, follow the steps below (from [here] (https://docs.gspread.org/en/latest/oauth2.html)): 
+First, Enable API Access for a Project. To do this, follow the steps below (from [here](https://docs.gspread.org/en/latest/oauth2.html)): 
 1. Head to Google Developers Console, and create a new project (or select the one you already have).
 2. In the box labeled “Search for APIs and Services”, search for “Google Drive API” and enable it.
 3. In the box labeled “Search for APIs and Services”, search for “Google Sheets API” and enable it.
@@ -66,14 +66,14 @@ This is where your data will output to, so make sure it's in the correct folder.
 ### Run the output_gsheets command.
 The variables to be entered are below. Only raw_df, gsheet_key, and ws_name are mandatory.
 
-raw_df = raw pandas dataframe you wish to output
-gsheet_key = Key to the Google Sheet you are outputting to (found in step 4). Must be a string.
-ws_name = Name of worksheet you are creating. Must be a string.
-wrap_cells: Set to True to wrap certain cells in the google sheet
-cells_wrap: Cells to wrap (for example, enter "D:E" if you want to wrap the text in columns 4 & 5 in the pandas dataframe). Must be a string.
-resize_columns: Set to True to resize certain cols in google sheet
-cols_to_resize = Columns to be resized (for example, enter "A:E" if you want to resize the first five columns. Note that you can only resize the width of the column). Must be a string.
-resize_size: Width size of the columns you are resizing (in pixels)
+1. raw_df = raw pandas dataframe you wish to output
+2. gsheet_key = Key to the Google Sheet you are outputting to (found in step 4). Must be a string.
+3. ws_name = Name of worksheet you are creating. Must be a string.
+4. wrap_cells: Set to True to wrap certain cells in the google sheet
+5. cells_wrap: Cells to wrap (for example, enter "D:E" if you want to wrap the text in columns 4 & 5 in the pandas dataframe). Must be a string.
+6. resize_columns: Set to True to resize certain cols in google sheet
+7. cols_to_resize = Columns to be resized (for example, enter "A:E" if you want to resize the first five columns. Note that you can only resize the width of the column). Must be a string.
+8. resize_size: Width size of the columns you are resizing (in pixels)
 
 Example code:
 `gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
