@@ -53,9 +53,9 @@ Finally, download your credentials file and place it in the appropriate location
 3. If you are a Windows User, find the hidden folder %APPDATA%. You should be able to do this by searching %APPDATA% in the File Explorer search bar. Then create a folder entitled gspread. 
 4. Move the credentials file created in step 1 to this folder.
 
-### Import relevant packages
-`import pandas as pd
-from code_snippets import output_gsheets`
+### Import relevant packages    
+    import pandas as pd
+    from code_snippets import output_gsheets
 
 ### Create a pandas dataframe
 `rawDF = pd.DataFrame({'greetings':['hello','goodbye']})`
@@ -76,17 +76,17 @@ The variables to be entered are below. Only raw_df, gsheet_key, and ws_name are 
 8. resize_size: Width size of the columns you are resizing (in pixels)
 
 Example code:
-`gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4' <br>
-output_gsheets(rawDF,gSheetKey,'test')
-`
+
+    gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
+    output_gsheets(rawDF,gSheetKey,'test')`
 
 To output multiple sheets, I recommend using a dictionary like so:
 
-`gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
-dfDict = {'df1': df1, 'df2': df2}
-for wsName, dfName in dfDict.items():
-    output_gsheets(dfName,gSheetKey,wsName)
-    `
+    gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
+    dfDict = {'df1': df1, 'df2': df2}
+
+    for wsName, dfName in dfDict.items():
+        output_gsheets(dfName,gSheetKey,wsName)
     
 The first time you run this command, it launches a browser asking you for authentication. Follow the instruction on the web page. Once finished, gspread stores authorised credentials in the config directory next to credentials.json. You only need to do authorisation in the browser once, as the following runs will reuse stored credentials.
 
