@@ -22,6 +22,76 @@ I wrote all the code snippets here to automate things that I frequently do while
 4. `output_gsheets.py` outputs a pandas dataframe into a google spreadsheet (see below for setup instructions)
 5. `preprocess_counter_code.py` preprocesses raw documents (removing stopwords, lemmatisation, etc.) and creates a counter of the words
 6. `return_dict.py` returns a nested dictionary to a query rather than a pandas df
+7. `to_excel_multiple_sheets.py` exports multiple dataframes to the same excel file
+8. `sqlUploadDF.py` uses pandas' to_sql function to upload dataframes to SQL
+9. `create_sql_list.py` turns a normal list into a string representing a SQL list ['a','b','c'] to ('a', 'b', 'c')
 
 
-## Setup to use 
+## How to use output_gsheets
+This function allows you to output a pandas dataframe object to google sheets.
+
+### Enable the Google Sheets API & set up authorisation.
+First, Enable API Access for a Project. To do this, follow the steps below:
+Head to Google Developers Console, and create a new project (or select the one you already have).
+In the box labeled “Search for APIs and Services”, search for “Google Drive API” and enable it.
+In the box labeled “Search for APIs and Services”, search for “Google Sheets API” and enable it.
+Then, Enable OAuth Client ID by following the following steps (taken from here): 
+
+Go to “APIs & Services > OAuth Consent Screen.” Click the button for “Configure Consent Screen”.
+a. In the “1 OAuth consent screen” tab, give your app a name and fill the “User support email” and “Developer contact information”, both with your email. Click “SAVE AND CONTINUE”.
+b. There is no need to fill in anything in the tab “2 Scopes”, just click “SAVE AND CONTINUE”.
+c. In the tab “3 Test users”, add your email. Click “SAVE AND CONTINUE”.
+d. Double check the “4 Summary” presented and click “BACK TO DASHBOARD”.
+Go to “APIs & Services > Credentials”
+Click “+ Create credentials” at the top, then select “OAuth client ID”.
+Select “Desktop app”, name the credentials and click “Create”. Click “Ok” in the “OAuth client created” popup.
+Download the credentials by clicking the Download JSON button in “OAuth 2.0 Client IDs” section.
+Finally, download your credentials file and place it in the appropriate location:
+
+Once you have downloaded the credentials file in step 6, rename it credentials.json.
+If you are a Mac User, go to your home directory and click command + shift + . (the period symbol) .This allows you to see hidden files. Find the hidden folder called .config and create a folder in there called gspread. 
+If you are a Windows User, find the hidden folder %APPDATA%. You should be able to do this by searching %APPDATA% in the File Explorer search bar. Then create a folder entitled gspread. 
+Move the credentials file created in step 1 to this folder.
+
+### Import relevant packages
+`import pandas as pd
+from code_snippets import output_gsheets`
+
+### Create a pandas dataframe
+`rawDF = pd.DataFrame({'greetings':['hello','goodbye']})`
+
+### Create a Google Spreadsheet in Google Sheets.
+This is where your data will output to, so make sure it's in the correct folder. Find the sheets key (it's the part after https://docs.google.com/spreadsheets/d/...). Copy it.
+
+### Run the output_gsheets command.
+The variables to be entered are below. Only raw_df, gsheet_key, and ws_name are mandatory.
+
+   raw_df = raw pandas dataframe you wish to output
+    gsheet_key = Key to the Google Sheet you are outputting to (found in step 4). Must be a string.
+    ws_name = Name of worksheet you are creating. Must be a string.
+    wrap_cells: Set to True to wrap certain cells in the google sheet
+    cells_wrap: Cells to wrap (for example, enter "D:E" if you want to wrap the text in columns 4 & 5 in the pandas dataframe). Must be a string.
+    resize_columns: Set to True to resize certain cols in google sheet
+    cols_to_resize = Columns to be resized (for example, enter "A:E" if you want to resize the first five columns. Note that you can only resize the width of the column). Must be a string.
+    resize_size: Width size of the columns you are resizing (in pixels)
+
+Example code:
+`
+gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
+output_gsheets(rawDF,gSheetKey,'test')
+`
+
+To output multiple sheets, I recommend using a dictionary like so:
+
+`gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
+dfDict = {'df1': df1, 'df2': df2}
+for wsName, dfName in dfDict.items():
+    output_gsheets(dfName,gSheetKey,wsName)
+    `
+    
+The first time you run this command, it launches a browser asking you for authentication. Follow the instruction on the web page. Once finished, gspread stores authorised credentials in the config directory next to credentials.json. You only need to do authorisation in the browser once, as the following runs will reuse stored credentials.
+
+
+
+
+
