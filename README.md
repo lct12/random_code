@@ -1,7 +1,9 @@
 # random_code
 I wrote all the code snippets here to automate things that I frequently do while coding. They can be imported directly into Python if you follow the directions below:
 
-## Background Setup (this is assuming you have Jupyter Lab downloaded on your computer)
+## Background Setup (
+
+If you don't already, make sure you have Anaconda downloaded
 
 ### On a Mac
 1. Go to your home directory (boaty.mcboatface), then find the path /opt/ananconda3/lib/pythonXX, where XX is the version of Python you have.
