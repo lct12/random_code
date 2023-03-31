@@ -31,21 +31,21 @@ I wrote all the code snippets here to automate things that I frequently do while
 This function allows you to output a pandas dataframe object to google sheets.
 
 ### Enable the Google Sheets API & set up authorisation.
-First, Enable API Access for a Project. To do this, follow the steps below:
+First, Enable API Access for a Project. To do this, follow the steps below (from https://docs.gspread.org/en/latest/oauth2.html) 
 1. Head to Google Developers Console, and create a new project (or select the one you already have).
 2. In the box labeled “Search for APIs and Services”, search for “Google Drive API” and enable it.
 3. In the box labeled “Search for APIs and Services”, search for “Google Sheets API” and enable it.
 
-Then, Enable OAuth Client ID by following the following steps (taken from here): 
+Then, Enable OAuth Client ID by following the following steps (taken from [here](https://docs.gspread.org/en/latest/oauth2.html#oauth-client-id)): 
 1. Go to “APIs & Services > OAuth Consent Screen.” Click the button for “Configure Consent Screen”.
-a. In the “1 OAuth consent screen” tab, give your app a name and fill the “User support email” and “Developer contact information”, both with your email. Click “SAVE AND CONTINUE”.
-b. There is no need to fill in anything in the tab “2 Scopes”, just click “SAVE AND CONTINUE”.
-c. In the tab “3 Test users”, add your email. Click “SAVE AND CONTINUE”.
-d. Double check the “4 Summary” presented and click “BACK TO DASHBOARD”.
-2. Go to “APIs & Services > Credentials”
-3. Click “+ Create credentials” at the top, then select “OAuth client ID”.
-4. Select “Desktop app”, name the credentials and click “Create”. Click “Ok” in the “OAuth client created” popup.
-5. Download the credentials by clicking the Download JSON button in “OAuth 2.0 Client IDs” section.
+2. In the “1 OAuth consent screen” tab, give your app a name and fill the “User support email” and “Developer contact information”, both with your email. Click “SAVE AND CONTINUE”.
+3. There is no need to fill in anything in the tab “2 Scopes”, just click “SAVE AND CONTINUE”.
+4. In the tab “3 Test users”, add your email. Click “SAVE AND CONTINUE”.
+5. Double check the “4 Summary” presented and click “BACK TO DASHBOARD”.
+6. Go to “APIs & Services > Credentials”
+7. Click “+ Create credentials” at the top, then select “OAuth client ID”.
+8. Select “Desktop app”, name the credentials and click “Create”. Click “Ok” in the “OAuth client created” popup.
+9. Download the credentials by clicking the Download JSON button in “OAuth 2.0 Client IDs” section.
 
 Finally, download your credentials file and place it in the appropriate location:
 1. Once you have downloaded the credentials file in step 6, rename it credentials.json.
