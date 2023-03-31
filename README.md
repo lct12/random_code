@@ -32,26 +32,26 @@ This function allows you to output a pandas dataframe object to google sheets.
 
 ### Enable the Google Sheets API & set up authorisation.
 First, Enable API Access for a Project. To do this, follow the steps below:
-Head to Google Developers Console, and create a new project (or select the one you already have).
-In the box labeled “Search for APIs and Services”, search for “Google Drive API” and enable it.
-In the box labeled “Search for APIs and Services”, search for “Google Sheets API” and enable it.
-Then, Enable OAuth Client ID by following the following steps (taken from here): 
+1. Head to Google Developers Console, and create a new project (or select the one you already have).
+2. In the box labeled “Search for APIs and Services”, search for “Google Drive API” and enable it.
+3. In the box labeled “Search for APIs and Services”, search for “Google Sheets API” and enable it.
 
-Go to “APIs & Services > OAuth Consent Screen.” Click the button for “Configure Consent Screen”.
+Then, Enable OAuth Client ID by following the following steps (taken from here): 
+1. Go to “APIs & Services > OAuth Consent Screen.” Click the button for “Configure Consent Screen”.
 a. In the “1 OAuth consent screen” tab, give your app a name and fill the “User support email” and “Developer contact information”, both with your email. Click “SAVE AND CONTINUE”.
 b. There is no need to fill in anything in the tab “2 Scopes”, just click “SAVE AND CONTINUE”.
 c. In the tab “3 Test users”, add your email. Click “SAVE AND CONTINUE”.
 d. Double check the “4 Summary” presented and click “BACK TO DASHBOARD”.
-Go to “APIs & Services > Credentials”
-Click “+ Create credentials” at the top, then select “OAuth client ID”.
-Select “Desktop app”, name the credentials and click “Create”. Click “Ok” in the “OAuth client created” popup.
-Download the credentials by clicking the Download JSON button in “OAuth 2.0 Client IDs” section.
-Finally, download your credentials file and place it in the appropriate location:
+2. Go to “APIs & Services > Credentials”
+3. Click “+ Create credentials” at the top, then select “OAuth client ID”.
+4. Select “Desktop app”, name the credentials and click “Create”. Click “Ok” in the “OAuth client created” popup.
+5. Download the credentials by clicking the Download JSON button in “OAuth 2.0 Client IDs” section.
 
-Once you have downloaded the credentials file in step 6, rename it credentials.json.
-If you are a Mac User, go to your home directory and click command + shift + . (the period symbol) .This allows you to see hidden files. Find the hidden folder called .config and create a folder in there called gspread. 
-If you are a Windows User, find the hidden folder %APPDATA%. You should be able to do this by searching %APPDATA% in the File Explorer search bar. Then create a folder entitled gspread. 
-Move the credentials file created in step 1 to this folder.
+Finally, download your credentials file and place it in the appropriate location:
+1. Once you have downloaded the credentials file in step 6, rename it credentials.json.
+2. If you are a Mac User, go to your home directory and click command + shift + . (the period symbol) .This allows you to see hidden files. Find the hidden folder called .config and create a folder in there called gspread. 
+3. If you are a Windows User, find the hidden folder %APPDATA%. You should be able to do this by searching %APPDATA% in the File Explorer search bar. Then create a folder entitled gspread. 
+4. Move the credentials file created in step 1 to this folder.
 
 ### Import relevant packages
 `import pandas as pd
