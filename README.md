@@ -76,7 +76,7 @@ The variables to be entered are below. Only raw_df, gsheet_key, and ws_name are 
 8. resize_size: Width size of the columns you are resizing (in pixels)
 
 Example code:
-`gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4'
+`gSheetKey = '1rvkAMeDylwnWxguQHR_QoeweRyq_ltlp9JngKuYejo4' <br>
 output_gsheets(rawDF,gSheetKey,'test')
 `
 
