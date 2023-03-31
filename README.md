@@ -1,7 +1,7 @@
 # random_code
 I wrote all the code snippets here to automate things that I frequently do while coding. They can be imported directly into Python if you follow the directions below:
 
-## Background Setup (
+## Background Setup 
 
 If you don't already, make sure you have Anaconda downloaded
 
