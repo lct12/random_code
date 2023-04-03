@@ -26,7 +26,7 @@ If you don't already, make sure you have Anaconda downloaded
 6. `return_dict.py` returns a nested dictionary rather than a pandas df to a query 
 7. `to_excel_multiple_sheets.py` exports multiple dataframes to the same excel file
 8. `sqlUploadDF.py` uses pandas' to_sql function to upload dataframes to SQL
-9. `create_sql_list.py` turns a normal list into a string representing a SQL list ['a','b','c'] to ('a', 'b', 'c')
+9. `create_sql_list.py` turns a normal list into a string representing a SQL list, e.g., ['a','b','c'] to "('a', 'b', 'c')"
 
 
 ## How to use output_gsheets
