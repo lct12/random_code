@@ -120,11 +120,11 @@ def preprocess_document_data(document_list, bigram=False,trigram=False,lemmatize
         return documents_lemmatized, documents_nostops,language
 
 # Define function to create counter dictionary where document_list = list of cleaned and/or lemmatized documents
-# Set postCounter = True if you want to count the number of posts/documents containing a word, rather than the number of times a word appears 
-# (Recall that a word can appear multiple times in the same post/document)
-def create_counter_dict(document_list, postCounter=False):
+# Set documentCounter = True if you want to count the number of documents containing a word, rather than the number of times a word appears 
+# (Recall that a word can appear multiple times in the same document)
+def create_counter_dict(document_list, documentCounter=False):
     # Create a list of all words in the documents
-    if postCounter == True:
+    if documentCounter == True:
         word_list = [w for r in document_list for w in set(r)]
     else:
         word_list = [w for r in document_list for w in r]
