@@ -60,7 +60,7 @@ Finally, download your credentials file and place it in the appropriate location
     from code_snippets import output_gsheets
 
 ### Create a pandas dataframe
-`rawDF = pd.DataFrame({'greetings':['hello','goodbye']})`
+    rawDF = pd.DataFrame({'greetings':['hello','goodbye']})
 
 ### Create a Google Spreadsheet in Google Sheets.
 This is where your data will output to, so make sure it's in the correct folder. Find the sheets key (it's the part after https://docs.google.com/spreadsheets/d/...). Copy it.
