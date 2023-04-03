@@ -1,4 +1,4 @@
-# this code creates neural networks
+# this code trains a neural network on a list/series of raw documents 
 
 from nltk.tokenize import RegexpTokenizer
 tokenizer = RegexpTokenizer(r'\w+')
